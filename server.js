@@ -9,10 +9,8 @@ const routes = require('./controllers');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Create an instance of express-handlebars
-const hbs = create({ defaultLayout: 'main' });
-
 // Set up Handlebars.js as the default templating engine.
+const hbs = expressHandlebars.create({ defaultLayout: 'main' });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
