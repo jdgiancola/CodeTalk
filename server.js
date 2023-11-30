@@ -28,39 +28,18 @@ const sess = {
   })
 };
 
-app.use(session(sess));
-
-// Define a root route
-app.get('/', (req, res) => {
-    res.render('home', { layout: 'main' });
-  });
-  
-
-// Set up Express.js middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
-
 // Set up session middleware
-app.use(session({
-    secret: 'super secret',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
-}));
+app.use(session(sess));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Set up Express.js middleware
+// Set up Express.js middleware for parsing JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Use express.static to serve static files located in the 'public' directory
+// Serve static files located in the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use routes defined in controllers

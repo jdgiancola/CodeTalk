@@ -7,6 +7,7 @@ const homeRoutes = require('./homeRoutes');
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
+router.use('/signup', userRoutes); // Add this line for the /signup route
 router.use('/', homeRoutes);
 
 module.exports = router;
