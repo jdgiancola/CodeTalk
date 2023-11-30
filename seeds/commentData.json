@@ -1,0 +1,18 @@
+[
+    {
+      "comment_text": "Great article, very informative!",
+      "user_id": 2,
+      "post_id": 1
+    },
+    {
+      "comment_text": "Thanks for the clarification on async/await.",
+      "user_id": 1,
+      "post_id": 2
+    },
+    {
+      "comment_text": "Hooks have really cleaned up my components, thanks for sharing.",
+      "user_id": 3,
+      "post_id": 3
+    }
+  ]
+  

@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeTalk</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../public/css/style.css">
 </head>
+
 <body>
   <header>
-    <!-- Navigation bar -->
+    <h1><a href="/">CodeTalk</a></h1>
+    <nav>
+      {{#if logged_in}}
+      <a href="/profile">Profile</a> |
+      <button id="logout">Logout</button>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
+    </nav>
   </header>
   <main>
-    {{{body}}}
+    {{{ body }}}
   </main>
   <footer>
-    <!-- Footer content -->
+    <p>&copy; 2023 CodeTalk Blog</p>
   </footer>
+
+  {{#if logged_in}}
+  <script src="../../public/js/logout.js"></script>
+  {{/if}}
 </body>
+
 </html>

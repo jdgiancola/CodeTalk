@@ -1,0 +1,21 @@
+<div class="post-detail">
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+  <p>Posted by {{user.name}} on {{format_date date_created}}</p>
+
+  <!-- Comments Section -->
+  {{#each comments as |comment|}}
+  <div class="comment">
+    <p>{{comment.comment_text}} - <em>by {{comment.user.name}}</em> on {{format_date comment.date_created}}</p>
+  </div>
+  {{/each}}
+
+  <!-- Add Comment Form -->
+  {{#if logged_in}}
+  <form class="new-comment-form" data-post-id="{{id}}">
+    <textarea id="comment-text" placeholder="Add a comment"></textarea>
+    <button type="submit">Submit Comment</button>
+  </form>
+  {{/if}}
+</div>
+<script src="../public/js/profile.js"></script>

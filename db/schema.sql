@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS codetalk_db;
+CREATE DATABASE codetalk_db;

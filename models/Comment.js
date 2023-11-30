@@ -15,8 +15,13 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1] // The comment must be at least one character long
+        len: [1] // Ensures the comment is at least one character long
       }
+    },
+    date_created: { // Added to store the creation date of the comment
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -37,6 +42,7 @@ Comment.init(
   },
   {
     sequelize,
+    timestamps: false, // Optionally set to true if you want automatic timestamping
     freezeTableName: true,
     underscored: true,
     modelName: 'comment'

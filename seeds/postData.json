@@ -1,0 +1,18 @@
+[
+    {
+      "title": "The Future of Web Development",
+      "content": "Web development is evolving rapidly with new technologies...",
+      "user_id": 1
+    },
+    {
+      "title": "Understanding Asynchronous JavaScript",
+      "content": "Asynchronous JavaScript, including Promises, Async/Await, can be tricky to understand...",
+      "user_id": 2
+    },
+    {
+      "title": "Demystifying React Hooks",
+      "content": "React Hooks provide a way to use stateful logic and lifecycle features in functional components...",
+      "user_id": 3
+    }
+  ]
+  

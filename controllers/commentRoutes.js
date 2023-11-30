@@ -1,16 +1,17 @@
 const router = require('express').Router();
 const { Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
 // Add a comment
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...req.body,
-      userId: req.session.userId
+      userId: req.session.userId  // Ensure this matches the session property name
     });
     res.status(200).json(newComment);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);  // Changed to 400 to indicate client-side error
   }
 });
 

@@ -1,8 +1,7 @@
-<h1>Welcome to CodeTalk</h1>
-{{#each posts as |post|}}
+{{#each posts as |post| }}
 <div class="post">
-  <h2>{{post.title}}</h2>
+  <h2><a href="/post/{{post.id}}">{{post.title}}</a></h2>
   <p>{{post.content}}</p>
-  <!-- More post details -->
+  <p>Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
 </div>
 {{/each}}

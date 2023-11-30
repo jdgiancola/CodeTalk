@@ -1,0 +1,50 @@
+<div>
+  <h2>Welcome, {{name}}!</h2>
+
+  <h3>Create a New Post:</h3>
+  <form class="new-post-form">
+    <input type="text" id="post-title" placeholder="Post Title">
+    <textarea id="post-content" placeholder="Post Content"></textarea>
+    <button type="submit">Create Post</button>
+  </form>
+
+  {{#if posts.length}}
+  <h3>Your Posts:</h3>
+  {{#each posts as |post|}}
+    <div class="post">
+      <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+      <p>{{post.content}}</p>
+
+      <!-- Add Comment Form for each Post -->
+      <h5>Add a Comment:</h5>
+      <form class="new-comment-form" data-post-id="{{post.id}}">
+        <textarea id="comment-text-{{post.id}}" placeholder="Your comment"></textarea>
+        <button type="submit">Submit Comment</button>
+      </form>
+
+      <!-- List Comments for each Post -->
+      <div class="comments">
+        {{#each post.comments as |comment|}}
+        <div class="comment">
+          <p>{{comment.comment_text}} - <em>by {{comment.user.name}}</em></p>
+        </div>
+        {{/each}}
+      </div>
+
+      <button data-id="{{post.id}}" class="delete-post-btn">Delete Post</button>
+    </div>
+  {{/each}}
+  {{/if}}
+</div>
+
+{{#if posts.length}}
+<h3>Your Posts:</h3>
+{{#each posts as |post|}}
+  <div class="post">
+    <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+    <button data-id="{{post.id}}" class="delete-post-btn">Delete Post</button>
+  </div>
+{{/each}}
+{{/if}}
+
+<script src="../public/js/profile.js"></script>
