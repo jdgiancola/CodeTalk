@@ -10,9 +10,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Set up Handlebars.js as the default templating engine.
-const hbs = expressHandlebars.create({ defaultLayout: 'main' });
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+
 
 // Set up Express.js middleware
 app.use(express.json());
