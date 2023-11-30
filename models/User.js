@@ -27,6 +27,10 @@ User.init(
       validate: {
         len: [8]  // Password must be at least 8 characters long
       }
+    },
+    name: {
+      type: DataTypes.STRING, // Define the data type for the name column
+      allowNull: true, // Adjust this based on your requirements
     }
   },
   {
@@ -48,5 +52,6 @@ User.init(
     modelName: 'user',
   }
 );
+
 
 module.exports = User;
