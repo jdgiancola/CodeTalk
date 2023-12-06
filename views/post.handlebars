@@ -9,7 +9,6 @@
     <p>{{comment.comment_text}} - <em>by {{comment.user.name}}</em> on {{format_date comment.date_created}}</p>
   </div>
   {{/each}}
-
   <!-- Add Comment Form -->
   {{#if logged_in}}
   <form class="new-comment-form" data-post-id="{{id}}">
@@ -18,4 +17,4 @@
   </form>
   {{/if}}
 </div>
-<script src="js/profile.js"></script>
+<script src="/js/profile.js"></script>
